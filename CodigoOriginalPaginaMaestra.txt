@@ -1,0 +1,84 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="ELv1.Pages.PaginaMaestra" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>IEL</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" />
+
+    <link rel="stylesheet" href="CSS/cssHead.css" />
+    <!-- 
+    <link rel="stylesheet" href="CSS/CSSQuiz.css" />
+    <link rel="stylesheet" href="CSS/estadisticas.css" />
+        -->
+    <style>
+        .logo{
+            width:200px;
+            height:auto;
+        }
+        .jumbotron{
+            margin-bottom:0;
+        }       
+    </style>
+    <script>
+        function salir() {
+            <%
+        //Session.Abandon();
+            %>
+            alert("Sesión cerrada");
+        }
+    </script>
+    <script src="JS/quiz.js"></script>
+     <script src="JS/PersonalizacionUsuario.js"></script>
+    <script src="JS/CambiarImagen.js"></script>
+</head>
+<body>    
+
+    <div class="jumbotron" runat="server" id="div">
+        <div class="container text-left">
+            <img src="IMG/Nombre.png" class="logo"/>
+        </div>
+    </div>
+    <%
+        if (Session["usuario"] == null)
+        {
+            Response.Redirect("Login.aspx");
+        }else
+        {
+            Datos.Daos.UsuarioDAO dao = new Datos.Daos.UsuarioDAO();
+            Datos.Modelo.Usuario user = dao.getUsuarioByUser(Session["usuario"].ToString());
+            if (user.Privilegio.ToUpper().Equals("administrativo".ToUpper()))
+            {
+                //Menu para administrativo
+                Response.Write("<nav class='navbar navbar-inverse'><div class='container-fluid'><ul class='nav navbar-nav'><li class='active'><a href='Principa.aspx''>Home</a></li><li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#''>Page 1 <span class='caret'></span></a><ul class='dropdown-menu'><li><a href='#'>Page 1-1</a></li><li><a href='#'>Page 1-2</a></li><li><a href='#'>Page 1-3</a></li></ul></li><li><a href='#'>Page 2</a></li></ul><ul class='nav navbar-nav navbar-right'><li><a href='#'>Usuarios</a></li><li><a href='#'>Estadisticas</a></li><li onclick='salir()'><a href='Login.aspx'>Salir</a></li><li id='logear'><a href='#'>"+Session["usuario"].ToString()+"</a></li></ul></div></nav>");
+
+            }
+            else
+            {
+                //Menu para usuario
+                Response.Write("<nav class='navbar navbar-inverse'><div class='container-fluid'><ul class='nav navbar-nav'><li class='active'><a href='Principa.aspx''>Home</a></li><li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#''>Page 1 <span class='caret'></span></a><ul class='dropdown-menu'><li><a href='#'>Page 1-1</a></li><li><a href='#'>Page 1-2</a></li><li><a href='#'>Page 1-3</a></li></ul></li><li><a href='#'>Page 2</a></li></ul><ul class='nav navbar-nav navbar-right'><li><a href='#'>Estadisticas</a></li><li onclick='salir()'><a href='Login.aspx'>Salir</a></li><li id='logear'><a href='#'>"+Session["usuario"].ToString()+"</a></li></ul></div></nav>");
+            }
+            Response.Write("<script>alert('Si esta logeado');</script>");
+        }
+
+         %>
+    <form id="form1" runat="server" method="post">
+        
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        
+         <footer class="container-fluid text-center">
+        <h5>Acerca de nosotros</h5>
+        <p>Somos jóvenes como tú, interesados en brindarte un servicio mediante IEL. Un sitio interactivo para aprender inglés.</p>
+        <p>Puedes contactarnos mediante el siguiente correo: <b>IEL@itsur.edu.mx</b></p>
+    </footer>
+    </form>    
+</body>
+</html>

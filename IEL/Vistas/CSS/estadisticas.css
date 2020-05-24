@@ -1,0 +1,75 @@
+﻿
+
+.divContenido{
+    
+       font-family :'Indie Flower', cursive;
+    font-size:30px;
+   
+    color:#000000;
+    
+    font-weight:bold;
+    background-color:white;
+}
+.barra{
+     text-decoration-line:none;
+}
+#txtAlumno{
+   
+    text-decoration-line:none;
+    font-weight:bold;
+    color:#73a0e7;
+    font-size:40px;
+      
+
+   
+}
+
+#progresoTotal{
+    color:#73a0e7;
+    
+    padding-left: 480px;
+    font-family :'Indie Flower', cursive;
+    font-size:50px;
+    padding-top:-100px;
+    padding-right:100px;
+    font-weight:bolder;
+    background-color:white;
+}
+#barProgress{
+     
+}
+body{
+    background-color:#ffffff;
+}
+#imgProgress{
+height:200px;
+width:300px;
+float:right;
+padding-right:50px;
+}
+.percetActs{
+    background-color:#ffffff;
+     font-family :'Indie Flower', cursive;
+    color:#000000;
+    font-size:35px;
+    /*float:right;*/
+    padding-left:100px;
+     
+      
+
+}
+ #txtAvance:hover {
+      -moz-transform: scale(1.2);
+-webkit-transform: scale(1.2);
+-o-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2)
+               }
+#tittleActs{
+    font-family :'Indie Flower', cursive;
+    color:#73a0e7;
+   
+    
+    font-size:35px;
+    font-weight:bold;
+}

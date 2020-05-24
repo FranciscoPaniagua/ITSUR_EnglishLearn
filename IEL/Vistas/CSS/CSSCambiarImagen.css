@@ -1,0 +1,42 @@
+﻿
+#alinearexterno{
+    background-color:#6ACDE4;
+    text-align:center;
+}
+
+#alinearinterno{
+    display:inline-block;
+}
+
+
+.style_prevu_kit
+{
+    display:inline-block;
+    border:0;
+    width:196px;
+    height:210px;
+    position: relative;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);   
+    margin-right:35px;
+
+}
+.style_prevu_kit:hover
+{
+    box-shadow: 0px 0px 50px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.025);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.025);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.025);
+}

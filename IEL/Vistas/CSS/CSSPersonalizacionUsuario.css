@@ -1,0 +1,33 @@
+﻿
+
+#centrarExterna{
+    text-align:center;
+    background-color:#6ACDE4;
+}
+
+#centrarInterna{
+    display:inline-block;
+}
+
+.fondoencabezado{
+    /*background-color:#C3D9FB;*/
+    border-left: 6px solid #C3D9FB;
+    border-right: 6px solid #C3D9FB;
+    background-color: lightgrey;
+}
+
+.letrabotones{
+    font-family: Verdana;
+}
+
+.letraformato{
+    font-family: 'Arial Rounded MT';
+}
+
+#imgUsuario{
+    height:163px;
+}
+
+#btnGuardarImg{
+    /*float:right;*/
+}
